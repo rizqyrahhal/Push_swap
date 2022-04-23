@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/04/22 16:36:20 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/04/23 15:59:56 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,19 @@ FLAGS = -Wall -Werror -Wextra
 CC = CC
 
 SRCS = Mandatory/push_swap.c \
+		Mandatory/stack.c \
+		Mandatory/check_args.c \
+		
 
 LIBFT = libft/ft_atoi.c \
+		libft/ft_isdigit.c \
+		
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
 
 $(NAME): $(OBJS) $(OBJS_L)
-	@$(CC) $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
 
 all: $(NAME)
 
