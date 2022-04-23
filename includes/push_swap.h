@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/21 17:54:50 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/23 00:38:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+struct stack
+{
+    int     size;
+    int     top;
+    char    *items;
+} stack;
+
 
 // libft
 int	ft_atoi(char *str);
-
 
 #endif

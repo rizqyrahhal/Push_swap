@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/04/21 17:56:17 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/04/22 16:36:20 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,17 @@ SRCS = Mandatory/push_swap.c \
 
 LIBFT = libft/ft_atoi.c \
 
+OBJS = $(SRCS:.c=.o)
+OBJS_L = $(LIBFT:.c=.o)
 
-$(NAME):
-	@$(CC) $(FLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(OBJS_L)
+	@$(CC) $(FLAGS) $(OBJS) $(OBJS_L) -o $(NAME)
 
 all: $(NAME)
 
 clean:
-	@rm -f *.o
+	@rm -f Mandatory/*.o
+	@rm -f libft/*.o
 
 fclean: clean
 	@rm -f $(NAME)
