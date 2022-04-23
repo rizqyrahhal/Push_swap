@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/23 17:16:52 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/23 18:18:10 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 	n = argc - 1;
 	while (--n >= 0)
 		push(stack_a, ft_atoi(argv[n + 1]));
-	pop(stack_a);
-	n = -1;
-	while(++n <= stack_a->size)
-		printf("%d\n", stack_a->items[n]);
+	// pop(stack_a);
+	// n = -1;
+	// while(++n <= stack_a->size)
+	// 	printf("%d\n", stack_a->items[n]);
 
 	// printf("%d\n", stack_a->size);
 
