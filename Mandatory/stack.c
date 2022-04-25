@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:02:32 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 03:09:08 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:07:00 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ t_stack *creat_stack(int capacity)
 	stack->items = (int *)malloc(sizeof(int) * stack->size);
 
 	return(stack);
+}
+
+// isEmpty detai
+int	isEmpyt(t_stack *stack)
+{
+	if (stack->top == -1)
+		return (1);
+	else
+		return (0);
 }
 
 void	push(t_stack *stack, int item)
@@ -50,10 +59,10 @@ int	pop(t_stack *stack)
 // 	return (stack->top == stack->size - 1);
 // }
 
-int	is_Empty(t_stack *stack)
-{
-	return (stack->top == stack->size);
-}
+// int	is_Empty(t_stack *stack)
+// {
+// 	return (stack->top == stack->size);
+// }
 
 // void	push(t_stack *stack, int item)
 // {
@@ -74,15 +83,6 @@ int	is_Empty(t_stack *stack)
 // int	isFull(t_stack *stack)
 // {
 // 	if (stack->top == stack->size - 1)
-// 		return (1);
-// 	else
-// 		return (0);
-// }
-
-// isEmpty detai
-// int	isEmpyt(t_stack *stack)
-// {
-// 	if (stack->top == -1)
 // 		return (1);
 // 	else
 // 		return (0);
