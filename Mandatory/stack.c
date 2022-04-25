@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:02:32 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/24 23:41:18 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/25 00:35:19 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	pop(t_stack *stack)
 
 
 
-// isFull and isEmpty detai
+// isFull detai
 // int	isFull(t_stack *stack)
 // {
 // 	if (stack->top == stack->size - 1)
@@ -79,6 +79,7 @@ int	pop(t_stack *stack)
 // 		return (0);
 // }
 
+// isEmpty detai
 // int	isEmpyt(t_stack *stack)
 // {
 // 	if (stack->top == -1)

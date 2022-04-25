@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   check_stack_isSorted.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 15:56:00 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 00:35:00 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/04/25 02:04:26 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/04/25 02:04:52 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_args(int argc, char *argv[])
+int	check_stack_isSorted(t_stack *stack)
 {
 	int	i;
-	int	j;
-
+	
 	i = 0;
-	while(++i < argc)
-	{
-		j = 0;
-		while(argv[i][j])
-		{
-			if (argv[i][j] == '+' || argv[i][j] == '-')
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
-			j++;
-		}
-	}
+	while(++i < stack->size)
+		if (stack->items[i - 1] < stack->items[i])
+			return (0);
 	return (1);
 }

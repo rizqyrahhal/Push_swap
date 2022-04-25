@@ -6,17 +6,11 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/24 23:39:59 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/25 02:06:37 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_error()
-{
-	write(2, "Error\n", 6);
-	exit (EXIT_FAILURE);
-}
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +27,13 @@ int main(int argc, char *argv[])
 	n = argc - 1;
 	while (--n >= 0)
 		push(stack_a, ft_atoi(argv[n + 1]));
-
+	if (check_stack_isSorted(stack_a))
+		exit(EXIT_SUCCESS);
+	
+	// print element of stack 
+	n = -1;
+	while(++n <= stack_a->size)
+		printf("%d\n", stack_a->items[stack_a->top--]);
+	
     return(0);
 }
