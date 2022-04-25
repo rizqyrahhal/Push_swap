@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 02:04:47 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/25 03:12:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_stack
 
 // function
 int	check_args(int argc, char *argv[]);
-int	check_stack_isSorted(t_stack *stack);
+// int	check_stack_isSorted(t_stack *stack);
+int	check_stack_isSorted(t_stack *stack, t_stack *stack_b);
 void	ft_error();
 
 
@@ -34,6 +35,7 @@ void	ft_error();
 t_stack *creat_stack(int capacity);
 void    push(t_stack *stack, int item);
 int pop(t_stack *stack);
+int	is_Empty(t_stack *stack);
 
 // libft
 int	ft_isdigit(int c);

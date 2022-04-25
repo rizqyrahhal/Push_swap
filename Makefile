@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/04/25 02:05:40 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/04/25 02:08:45 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = Mandatory/push_swap.c \
 		Mandatory/stack.c \
 		Mandatory/check_args.c \
 		Mandatory/ft_error.c \
-		Mandatory/check_stack_isSorted.c \
+		Mandatory/is_Sorted.c \
 		
 		
 		
