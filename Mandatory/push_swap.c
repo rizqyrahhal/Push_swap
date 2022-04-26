@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 16:57:21 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/26 18:10:29 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,19 @@ int main(int argc, char *argv[])
 	check_is_Duplicate(stack_a);
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
-	
-	sa(stack_a);
+
+	// sa(stack_a);
+	// pb(stack_a, stack_b);
+	// pa(stack_a, stack_b);
+	// ra(stack_a);
+	// ra(stack_a);
+	// rb(stack_b);
+	rr(stack_a, stack_b); /* propleme de print if rr print ra est exit par ce que stack b empty */
+
 	
 	// print element of stack 
 	n = -1;
-	while(++n <= stack_a->size)
+	while(++n < stack_a->size)
 		printf("%d\n", stack_a->items[stack_a->top--]);
 	
     return(0);
