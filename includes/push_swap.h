@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 22:25:53 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/26 22:56:58 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,21 @@ void    push(t_stack *stack, int item);
 int     pop(t_stack *stack);
 int     is_Empty(t_stack *stack);
 
+
 // action 
-void    swaping(t_stack *stack);
+int     swaping(t_stack *stack, int print, char type);
 void    sa(t_stack *stack_a);
 void    sb(t_stack *stack_b);
 void    ss(t_stack *stack_a, t_stack *stack_b);
-void    pa(t_stack *stack_a, t_stack *stack_b);
-void    pb(t_stack *stack_a, t_stack *stack_b);
-void    ra(t_stack *stack_a);
-void    rb(t_stack *stack_b);
+void    push_to_stack(t_stack *receve, t_stack *send, char type);
+// void    pa(t_stack *stack_a, t_stack *stack_b);
+// void    pb(t_stack *stack_a, t_stack *stack_b);
+int     rotate(t_stack *stack, int print, char type);
 void    rr(t_stack *stack_a, t_stack *stack_b);
+int     reverse_rotate(t_stack *stack, int print, char type);
+void    rrr(t_stack *stack_a, t_stack *stack_b);
+
+
 
 
 

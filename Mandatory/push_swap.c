@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/26 18:10:29 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/04/26 23:08:25 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,29 @@ int main(int argc, char *argv[])
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
 
-	// sa(stack_a);
+	
+	
+
+
+	// swaping(stack_b, 1, 'b');
+	// ss(stack_a, stack_b);
 	// pb(stack_a, stack_b);
 	// pa(stack_a, stack_b);
-	// ra(stack_a);
+	// push_to_stack(stack_b, stack_a, 'b');
+	// push_to_stack(stack_b, stack_a, 'b');
+	// push_to_stack(stack_a, stack_b, 'a');
+	// push_to_stack(stack_a, stack_b, 'a');
+	// rotate(stack_b, 1, 'b');
 	// ra(stack_a);
 	// rb(stack_b);
-	rr(stack_a, stack_b); /* propleme de print if rr print ra est exit par ce que stack b empty */
+	// rr(stack_a, stack_b); 
+	// reverse_rotate(stack_b, 1, 'b');
+	// reverse_rotate(stack_a, 1, 'a');
+	// rrr(stack_a, stack_b);
+	
 
 	
-	// print element of stack 
+	// print element of stack  /*le cas de "1 2 3" splete and assing*/
 	n = -1;
 	while(++n < stack_a->size)
 		printf("%d\n", stack_a->items[stack_a->top--]);
