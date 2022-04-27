@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 15:57:26 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/27 00:33:27 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/04/27 00:40:52 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/04/27 00:41:08 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_isdigit(int c)
+size_t	ft_strlcpy(char *dist, const char *src, size_t dstsize)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	if (dstsize > 0)
+	{
+		while (src[i] && i < (dstsize - 1))
+		{
+			dist[i] = src[i];
+			i++;
+		}
+		dist[i] = '\0';
+	}
+	return (ft_strlen(src));
 }
