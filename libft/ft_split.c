@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 00:39:23 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/27 00:39:35 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:26:50 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**ft_malloc_error(char **tab)
 	return (NULL);
 }
 
-int	num_of_words(const char *str, char c)
+int	num_of_words(char *str, char c)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,7 @@ int	num_of_words(const char *str, char c)
 	return (j);
 }
 
-char	*next_str(char const *s, char c)
+char	*next_str(char *s, char c)
 {
 	int		i;
 	char	*tab;
@@ -54,7 +54,7 @@ char	*next_str(char const *s, char c)
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		i;
 	int		strs_len;

@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 15:56:00 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/05 19:29:19 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/05/05 14:08:52 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/05/05 14:09:10 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_args(int argc, char *argv[])
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while(++i < argc)
+	while (n && s1[i] && s1[i] == s2[i])
 	{
-		j = 0;
-		while(argv[i][j])
-		{
-			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
-			j++;
-		}
+		i++;
+		n--;
 	}
-	return (1);
+	if (n == 0)
+		return (0);
+	else
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

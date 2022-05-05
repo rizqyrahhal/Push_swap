@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 15:56:00 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/05 19:29:19 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/05/05 15:40:05 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/05/05 15:40:14 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_args(int argc, char *argv[])
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while(++i < argc)
+	if (*needle == '\0')
+		return ((char *) haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
 		j = 0;
-		while(argv[i][j])
+		while (haystack[i + j] == needle[j] && i + j < len)
 		{
-			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
-				j++;
-			if (!ft_isdigit(argv[i][j]))
-				return (0);
 			j++;
+			if (needle[j] == '\0')
+				return ((char *)&haystack[i]);
 		}
+		i++;
 	}
-	return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/04/25 17:01:59 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/05 15:40:43 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,10 @@ SRCS = Mandatory/push_swap.c \
 LIBFT = libft/ft_atoi.c \
 		libft/ft_isdigit.c \
 		libft/ft_strlen.c \
+		libft/ft_strlcpy.c \
+		libft/ft_split.c \
+		libft/ft_strncmp.c \
+		libft/ft_strnstr.c \
 		
 		
 

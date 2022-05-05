@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/27 00:47:36 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/05 16:27:13 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,11 @@ int     ft_isdigit(int c);
 int     ft_atoi(char *str);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dist, const char *src, size_t dstsize);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char *s, char c);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+
 
 
 #endif
