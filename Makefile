@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/05 15:40:43 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/09 16:48:08 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS = Mandatory/push_swap.c \
 		Mandatory/is_Sorted.c \
 		Mandatory/is_duplicate.c \
 		Mandatory/action.c \
+		Mandatory/3random_numbers.c \
+		
 		
 		
 		
@@ -31,7 +33,6 @@ LIBFT = libft/ft_atoi.c \
 		libft/ft_strlen.c \
 		libft/ft_strlcpy.c \
 		libft/ft_split.c \
-		libft/ft_strncmp.c \
 		libft/ft_strnstr.c \
 		
 		

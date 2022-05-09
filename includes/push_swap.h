@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/05 16:27:13 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:59:32 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ int     check_is_Sorted(t_stack *stack);
 void	check_is_Duplicate(t_stack *stack);
 void	ft_error();
 
+// logicale function
+void    sort_three_numbers(t_stack *stack);
+void    sort_for_numbers(t_stack *stack_a, t_stack *stak_b);
+
+
+
+
+
 
 // stack
 t_stack *creat_stack(int capacity);
@@ -44,8 +52,6 @@ void    sa(t_stack *stack_a);
 void    sb(t_stack *stack_b);
 void    ss(t_stack *stack_a, t_stack *stack_b);
 void    push_to_stack(t_stack *receve, t_stack *send, char type);
-// void    pa(t_stack *stack_a, t_stack *stack_b);
-// void    pb(t_stack *stack_a, t_stack *stack_b);
 int     rotate(t_stack *stack, int print, char type);
 void    rr(t_stack *stack_a, t_stack *stack_b);
 int     reverse_rotate(t_stack *stack, int print, char type);

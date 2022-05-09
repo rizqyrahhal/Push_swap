@@ -6,36 +6,22 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/05 19:33:55 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:26:45 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// char	*tack_args(int argc, char *argv[])
-// {
-// 	int		i;
-// 	int		j;
-// 	int		len;
-// 	char	**dawoz;
-// 	char	*stock;
+int	calculat_size(char **str)
+{
+	int	i;
 
-// 	i = 0;
-// 	len = 0;
-// 	while (++i < argc)
-// 	{
-// 		j = 0;
-// 		dawoz = ft_split(argv[i], ' ');
-// 		while (dawoz[j])
-// 			stock[len++] = *dawoz[j++];
-// 	}
-// 	while (*stock)
-// 	{
-// 		printf("%s\n", stock);
-// 		stock++;
-// 	}
-// 	return (stock);
-// }
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+		
+}
 
 void	free_array(char **array)
 {
@@ -53,81 +39,45 @@ int main(int argc, char *argv[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int n;
-	int	counter;
 
 	if (argc == 1)
 		exit (EXIT_FAILURE);
-	// array = tack_args(argc, argv);
 	if (!check_args(argc, argv))
 		ft_error();
-	stack_a = creat_stack(argc - 1);
-	stack_b = creat_stack(argc - 1);
 	
 	if (argc == 2)
 	{
-		n = argc - 1;
-		while (argv[n])
+		array = ft_split(argv[argc - 1], ' ');
+		n = calculat_size(array);
+		stack_a = creat_stack(n);
+		stack_b = creat_stack(n);
+		if (ft_strnstr(argv[argc - 1], " ", n))
 		{
-			if (ft_strnstr(argv[n], " ", ft_strlen(argv[n])))
-			{
-				array = ft_split(argv[n], ' ');
-				counter = 4;
-				while(counter >= 0)
-				{
-					push(stack_a, ft_atoi(array[counter]));
-					counter--;
-					printf("WWWWWWWW\n");
-				}
-				n--;
-				free_array(array);
-			}
-				int i = -1;
-				while (array[++i])
-					printf("%s\n", array[i]);
-				// printf("TEST\n");
+			while(--n >= 0)
+				push(stack_a, ft_atoi(array[n]));
+			free_array(array);
 		}
-		// printf("|%d|\n", n);
 	}
 	else {
+		stack_a = creat_stack(argc - 1);
+		stack_b = creat_stack(argc - 1);
 		n = argc - 1;
 		while (--n >= 0)
 			push(stack_a, ft_atoi(argv[n + 1]));
 	}
-	/*
-	n = argc - 1;
-	while (--n >= 0)
-	{
-		// if (ft_strncmp(" ", argv[n], ft_strlen(argv[n])))
-			// push(stack_a, ft_atoi(argv[n + 1]));
-		if (!ft_strnstr(argv[n + 1], " ", ft_strlen(argv[n + 1])))
-			push(stack_a, ft_atoi(argv[n + 1]));
-		else if (ft_strnstr(argv[n + 1], " ", ft_strlen(argv[n + 1])))
-		{
-			array = ft_split(argv[n + 1], ' ');
-			// int i = -1;
-			// while (array[++i])
-			// 	printf("%s\n", array[i]);
-			counter = 3;
-			while(counter >= 0)
-			{
-				push(stack_a, ft_atoi(array[counter]));
-				counter--;
-				// printf("WWWWWWWW\n");
-			}
-			free_array(array);
-		// printf("TEST\n");
-		}
-		// printf("|%d|\n", n);
-	}
-	*/
+	
 	check_is_Duplicate(stack_a);
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
 
-	
+	// applique logic :
+	if (stack_a->size == 3)
+		sort_three_numbers(stack_a);
+	else if (stack_a->size <= 5)
+		sort_for_numbers(stack_a, stack_b);
 	
 
-
+	// reverse_rotate(stack_a, 1, 'a');
 	// swaping(stack_b, 1, 'b');
 	// ss(stack_a, stack_b);
 	// pb(stack_a, stack_b);
@@ -147,9 +97,18 @@ int main(int argc, char *argv[])
 
 	
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
+	printf("stack_A\n");
 	n = -1;
-	while(++n < stack_a->size)
+	// stack_a->size
+	while(++n < 3)
 		printf("%d\n", stack_a->items[stack_a->top--]);
+	printf("stack_B\n");
+	n = -1;
+	while (++n < 2)
+	{
+		printf("%d\n", stack_b->items[stack_b->top--]);
+	}
+	
 	
 	
     return(0);
