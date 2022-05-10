@@ -44,13 +44,32 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
 {
     push_to_stack(stack_b, stack_a, 'b');
     push_to_stack(stack_b, stack_a, 'b');
-    sort_three_numbers(stack_a);
+    if (!check_is_Sorted(stack_a))
+        sort_three_numbers(stack_a);
     if (stack_b->items[stack_b->top] < stack_b->items[0])
         swaping(stack_b, 1, 'b');
-    else if (stack_a->items[stack_a->top] > stack_b->items[stack_b->top]) // ila kano bjoj l9dam
+    if (stack_a->items[stack_a->top] > stack_b->items[stack_b->top] && stack_a->items[stack_a->top] > stack_b->items[0]) // ila kano bjoj l9dam
+    {
+        push_to_stack(stack_a, stack_b, 'a');
+        push_to_stack(stack_a, stack_b, 'a');
+    }
+    // top dyal B kbar man bottom dyal A wo lbatam dyal B akbsr mn top A wo sghar man top -1
+    else if (stack_b->items[stack_b->top] > stack_a->items[0] && stack_b->items[0] > stack_a->items[stack_a->top] && stack_b->items[0] < stack_a->items[1])
     {
         push_to_stack(stack_a, stack_b , 'a');
+        rotate(stack_a, 1, 'a');
         push_to_stack(stack_a, stack_b , 'a');
+        swaping(stack_a, 1, 'a');
+    }
+    // top dyal B kbar man bottom dyal A wo lbatam dyal B akbsr mn top -1 dyal A wo sghar man bottam dayl A
+    else if (stack_b->items[stack_b->top] > stack_a->items[0] && stack_b->items[0] > stack_a->items[stack_a->top - 1] && stack_b->items[0] < stack_a->items[0])
+    {
+        push_to_stack(stack_a, stack_b , 'a');
+        rotate(stack_a, 1, 'a');
+        rotate(stack_a, 1, 'a');
+        push_to_stack(stack_a, stack_b , 'a');
+        swaping(stack_a, 1, 'a');
+        reverse_rotate(stack_a, 1, 'a');
     }
     else if (stack_a->items[0] < stack_b->items[stack_b->top]) // ila kano bjoj lor
     {
@@ -68,6 +87,16 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
         push_to_stack(stack_a, stack_b, 'a');
         reverse_rotate(stack_a, 1, 'a');
     }
+    // ila kan top_B bin tani wo lakhar wo bottom_B bin lowl wo tani
+    else if (stack_b->items[stack_b->top] < stack_a->items[0] && stack_b->items[stack_b->top] > stack_a->items[1] && stack_b->items[0] < stack_a->items[1] && stack_b->items[0] > stack_a->items[stack_a->top])
+    {
+        reverse_rotate(stack_a, 1, 'a');
+        push_to_stack(stack_a, stack_b, 'a');
+        rotate(stack_a, 1, 'a');
+        rotate(stack_a, 1, 'a');
+        push_to_stack(stack_a, stack_b, 'a');
+        swaping(stack_a, 1, 'a');
+    }
     // ila kano mabin tani wo talt
     else if (stack_b->items[stack_b->top] > stack_a->items[1] && stack_b->items[stack_b->top] < stack_a->items[0])
     {
@@ -78,13 +107,13 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
         rotate(stack_a, 1, 'a');
         rotate(stack_a, 1, 'a');
     }
-    else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] < stack_b->items[0])
-    {
-        push_to_stack(stack_a, stack_b , 'a');
-        push_to_stack(stack_a, stack_b , 'a');
-        rotate(stack_a, 1, 'a');
-        rotate(stack_a, 1, 'a');
-    }
+    // else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] < stack_b->items[0])
+    // {
+    //     push_to_stack(stack_a, stack_b , 'a');
+    //     push_to_stack(stack_a, stack_b , 'a');
+    //     rotate(stack_a, 1, 'a');
+    //     rotate(stack_a, 1, 'a');
+    // }
     else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] > stack_b->items[0])
     {
         push_to_stack(stack_a, stack_b , 'a');
