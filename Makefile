@@ -21,7 +21,7 @@ SRCS = Mandatory/push_swap.c \
 		Mandatory/is_Sorted.c \
 		Mandatory/is_duplicate.c \
 		Mandatory/action.c \
-		Mandatory/3random_numbers.c \
+		Mandatory/logic.c \
 		
 		
 		

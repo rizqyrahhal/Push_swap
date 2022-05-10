@@ -22,7 +22,7 @@ void    sort_three_numbers(t_stack *stack)
     middle = stack->items[stack->top / 2];
     bottom =stack->items[0];
     
-    if (top > middle && middle < bottom && bottom && top < bottom)
+    if (top > middle && middle < bottom && bottom > top)
         swaping(stack, 1, 'a');
     else if (top > middle && middle > bottom)
     {
@@ -36,7 +36,7 @@ void    sort_three_numbers(t_stack *stack)
         swaping(stack, 1, 'a');
         rotate(stack, 1, 'a');
     }
-    else
+    else if (top < middle && middle > bottom)
         reverse_rotate(stack, 1, 'a');
 }
 
@@ -44,8 +44,8 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
 {
     push_to_stack(stack_b, stack_a, 'b');
     push_to_stack(stack_b, stack_a, 'b');
-    if (!check_is_Sorted(stack_a))
-        sort_three_numbers(stack_a);
+    // if (!check_is_Sorted(stack_a))
+    sort_three_numbers(stack_a);
     if (stack_b->items[stack_b->top] < stack_b->items[0])
         swaping(stack_b, 1, 'b');
     if (stack_a->items[stack_a->top] > stack_b->items[stack_b->top] && stack_a->items[stack_a->top] > stack_b->items[0]) // ila kano bjoj l9dam
@@ -71,21 +71,13 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
         swaping(stack_a, 1, 'a');
         reverse_rotate(stack_a, 1, 'a');
     }
-    else if (stack_a->items[0] < stack_b->items[stack_b->top]) // ila kano bjoj lor
+    else if (stack_a->items[0] < stack_b->items[stack_b->top] && stack_a->items[0] < stack_b->items[0]) // ila kano bjoj lor
     {
-        swaping(stack_b, 1, 'b');
+        // swaping(stack_b, 1, 'b');
         push_to_stack(stack_a, stack_b, 'a');
         push_to_stack(stack_a, stack_b, 'a');
         rotate(stack_a, 1, 'a');
         rotate(stack_a, 1, 'a');
-    }
-    // ila kano mabin lowl wo tani
-    else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top - 1] > stack_b->items[stack_b->top])
-    {
-        rotate(stack_a, 1, 'a');
-        push_to_stack(stack_a, stack_b, 'a');
-        push_to_stack(stack_a, stack_b, 'a');
-        reverse_rotate(stack_a, 1, 'a');
     }
     // ila kan top_B bin tani wo lakhar wo bottom_B bin lowl wo tani
     else if (stack_b->items[stack_b->top] < stack_a->items[0] && stack_b->items[stack_b->top] > stack_a->items[1] && stack_b->items[0] < stack_a->items[1] && stack_b->items[0] > stack_a->items[stack_a->top])
@@ -97,6 +89,14 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
         push_to_stack(stack_a, stack_b, 'a');
         swaping(stack_a, 1, 'a');
     }
+    // ila kano mabin lowl wo tani
+    else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] < stack_b->items[0] && stack_a->items[stack_a->top - 1] > stack_b->items[0])
+    {
+        rotate(stack_a, 1, 'a');
+        push_to_stack(stack_a, stack_b, 'a');
+        push_to_stack(stack_a, stack_b, 'a');
+        reverse_rotate(stack_a, 1, 'a');
+    }
     // ila kano mabin tani wo talt
     else if (stack_b->items[stack_b->top] > stack_a->items[1] && stack_b->items[stack_b->top] < stack_a->items[0])
     {
@@ -107,17 +107,12 @@ void    sort_for_numbers(t_stack *stack_a, t_stack *stack_b)
         rotate(stack_a, 1, 'a');
         rotate(stack_a, 1, 'a');
     }
-    // else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] < stack_b->items[0])
-    // {
-    //     push_to_stack(stack_a, stack_b , 'a');
-    //     push_to_stack(stack_a, stack_b , 'a');
-    //     rotate(stack_a, 1, 'a');
-    //     rotate(stack_a, 1, 'a');
-    // }
-    else if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] > stack_b->items[0])
+    // top dyal A asghr mn top dyal B && top dyal A akbr mn battom dyal B
+    else
     {
         push_to_stack(stack_a, stack_b , 'a');
-        rotate(stack_a, 1, 'a');
+        swaping(stack_a, 1, 'a');
         push_to_stack(stack_a, stack_b , 'a');
     }
 }
+// if (stack_a->items[stack_a->top] < stack_b->items[stack_b->top] && stack_a->items[stack_a->top] > stack_b->items[0])
