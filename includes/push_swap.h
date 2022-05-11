@@ -25,6 +25,7 @@ typedef struct s_stack
 } t_stack;
 
 // function
+void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b);
 int     check_args(int argc, char *argv[]);
 int     check_is_Sorted(t_stack *stack);
 void	check_is_Duplicate(t_stack *stack);

@@ -46,37 +46,67 @@ void	free_array(char **array)
 	free(array);
 }
 
+// void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
+// {
+// 	char	**array;
+// 	int		size;
+
+// 	if (argc == 2)
+// 	{
+// 		array = ft_split(argv[argc - 1], ' ');
+// 		size = calculat_size(array);
+// 		stack_a = creat_stack(size);
+// 		stack_b = creat_stack(size);
+// 		if (ft_strnstr(argv[argc - 1], " ", size))
+// 		{
+// 			while(--size >= 0)
+// 				push(stack_a, ft_atoi(array[size]));
+// 			free_array(array);
+// 		}
+// 	}
+// 	else 
+// 	{
+// 		stack_a = creat_stack(argc - 1);
+// 		stack_b = creat_stack(argc - 1);
+// 		size = argc - 1;
+// 		while (--size >= 0)
+// 			push(stack_a, ft_atoi(argv[size + 1]));
+// 	}
+// }
+
 int main(int argc, char *argv[])
 {
-	char	**array;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int n;
+	char	**array;
+	int size;
 
 	if (argc == 1)
 		exit (EXIT_FAILURE);
+	printf("TEST");
 	if (!check_args(argc, argv))
 		ft_error();
-	
+	// amplement_stack(argc, argv, stack_a, stack_b);
 	if (argc == 2)
 	{
 		array = ft_split(argv[argc - 1], ' ');
-		n = calculat_size(array);
-		stack_a = creat_stack(n);
-		stack_b = creat_stack(n);
-		if (ft_strnstr(argv[argc - 1], " ", n))
+		size = calculat_size(array);
+		stack_a = creat_stack(size);
+		stack_b = creat_stack(size);
+		if (ft_strnstr(argv[argc - 1], " ", size))
 		{
-			while(--n >= 0)
-				push(stack_a, ft_atoi(array[n]));
+			while(--size >= 0)
+				push(stack_a, ft_atoi(array[size]));
 			free_array(array);
 		}
 	}
-	else {
+	else 
+	{
 		stack_a = creat_stack(argc - 1);
 		stack_b = creat_stack(argc - 1);
-		n = argc - 1;
-		while (--n >= 0)
-			push(stack_a, ft_atoi(argv[n + 1]));
+		size = argc - 1;
+		while (--size >= 0)
+			push(stack_a, ft_atoi(argv[size + 1]));
 	}
 	
 	check_is_Duplicate(stack_a);
@@ -108,17 +138,17 @@ int main(int argc, char *argv[])
 
 	
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	// printf("stack_A\n");
-	// n = -1;
-	// // stack_a->size
-	// while(++n < stack_a->size)
-	// 	printf("%d\n", stack_a->items[stack_a->top--]);
-	// printf("stack_B\n");
-	// n = -1;
-	// while (++n < 2)
-	// {
-	// 	printf("%d\n", stack_b->items[stack_b->top--]);
-	// }
+	printf("stack_A\n");
+	size = -1;
+	// stack_a->size
+	while(++size < stack_a->size)
+		printf("%d\n", stack_a->items[stack_a->top--]);
+	printf("stack_B\n");
+	size = -1;
+	while (++size < 2)
+	{
+		printf("%d\n", stack_b->items[stack_b->top--]);
+	}
 	
 	
 	
