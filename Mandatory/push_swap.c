@@ -12,6 +12,19 @@
 
 #include "../includes/push_swap.h"
 
+void	logic(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a->size <= 3)
+	{
+		if (stack_a->size == 2)
+			swaping(stack_a, 1, 'a');
+		else
+			three_numbers(stack_a);
+	}
+	else if (stack_a->size <= 5)
+		five_numbers(stack_a, stack_b);
+}
+
 int	calculat_size(char **str)
 {
 	int	i;
@@ -71,10 +84,8 @@ int main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 
 	// applique logic :
-	if (stack_a->size == 3)
-		sort_three_numbers(stack_a);
-	else if (stack_a->size <= 5)
-		sort_for_numbers(stack_a, stack_b);
+	logic(stack_a, stack_b);
+
 	
 
 	// reverse_rotate(stack_a, 1, 'a');
@@ -97,17 +108,17 @@ int main(int argc, char *argv[])
 
 	
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("stack_A\n");
-	n = -1;
-	// stack_a->size
-	while(++n < stack_a->size)
-		printf("%d\n", stack_a->items[stack_a->top--]);
-	printf("stack_B\n");
-	n = -1;
-	while (++n < 2)
-	{
-		printf("%d\n", stack_b->items[stack_b->top--]);
-	}
+	// printf("stack_A\n");
+	// n = -1;
+	// // stack_a->size
+	// while(++n < stack_a->size)
+	// 	printf("%d\n", stack_a->items[stack_a->top--]);
+	// printf("stack_B\n");
+	// n = -1;
+	// while (++n < 2)
+	// {
+	// 	printf("%d\n", stack_b->items[stack_b->top--]);
+	// }
 	
 	
 	

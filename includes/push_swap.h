@@ -31,8 +31,10 @@ void	check_is_Duplicate(t_stack *stack);
 void	ft_error();
 
 // logicale function
-void    sort_three_numbers(t_stack *stack);
-void    sort_for_numbers(t_stack *stack_a, t_stack *stak_b);
+void	logic(t_stack *stack_a, t_stack *stack_b);
+void    three_numbers(t_stack *stack);
+void    five_numbers(t_stack *stack_a, t_stack *stack_b);
+
 
 
 
