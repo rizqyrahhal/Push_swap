@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_Sorted.c                                        :+:      :+:    :+:   */
+/*   find_median.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 02:04:26 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 16:20:37 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/05/16 17:41:36 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/05/16 17:41:45 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	check_is_Sorted(t_stack *stack)
+int find_median(int *array, int len)
 {
-	int	i;
+    int median;
+    int *sorted;
 
-	i = -1;
-	while(++i < stack->size - 1)
-		if (stack->items[i] < stack->items[i + 1])
-			return (0);
-	return (1);
+    sorted = sort_array(array, len);
+    if (len == 4)
+        median = sorted[0];
+    else
+        median = sorted[1];
+    free(sorted);
+    return (median);
 }

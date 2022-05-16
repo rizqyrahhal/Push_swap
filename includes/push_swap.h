@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/09 17:59:32 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/16 17:52:41 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,12 @@ int     check_is_Sorted(t_stack *stack);
 void	check_is_Duplicate(t_stack *stack);
 void	ft_error();
 
-// logicale function
+// Algorithme function
 void	logic(t_stack *stack_a, t_stack *stack_b);
 void    three_numbers(t_stack *stack);
 void    five_numbers(t_stack *stack_a, t_stack *stack_b);
-
-
-
-
-
-
+int     *sort_array(int *array, int len);
+int     find_median(int *array, int len);
 
 // stack
 t_stack *creat_stack(int capacity);
@@ -50,6 +46,7 @@ int     is_Empty(t_stack *stack);
 
 
 // action 
+void    printing(char *str);
 int     swaping(t_stack *stack, int print, char type);
 void    sa(t_stack *stack_a);
 void    sb(t_stack *stack_b);
@@ -59,12 +56,6 @@ int     rotate(t_stack *stack, int print, char type);
 void    rr(t_stack *stack_a, t_stack *stack_b);
 int     reverse_rotate(t_stack *stack, int print, char type);
 void    rrr(t_stack *stack_a, t_stack *stack_b);
-
-
-
-
-
-
 
 // libft
 int     ft_isdigit(int c);

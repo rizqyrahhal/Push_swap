@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/09 19:47:20 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:02:16 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	logic(t_stack *stack_a, t_stack *stack_b)
 	}
 	else if (stack_a->size <= 5)
 		five_numbers(stack_a, stack_b);
+	// else if (stack_a->size <= 100)
+	// 	own_hundred_numbers(stack_a, stack_a->size, 20);
 }
 
 int	calculat_size(char **str)
@@ -46,33 +48,6 @@ void	free_array(char **array)
 	free(array);
 }
 
-// void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
-// {
-// 	char	**array;
-// 	int		size;
-
-// 	if (argc == 2)
-// 	{
-// 		array = ft_split(argv[argc - 1], ' ');
-// 		size = calculat_size(array);
-// 		stack_a = creat_stack(size);
-// 		stack_b = creat_stack(size);
-// 		if (ft_strnstr(argv[argc - 1], " ", size))
-// 		{
-// 			while(--size >= 0)
-// 				push(stack_a, ft_atoi(array[size]));
-// 			free_array(array);
-// 		}
-// 	}
-// 	else 
-// 	{
-// 		stack_a = creat_stack(argc - 1);
-// 		stack_b = creat_stack(argc - 1);
-// 		size = argc - 1;
-// 		while (--size >= 0)
-// 			push(stack_a, ft_atoi(argv[size + 1]));
-// 	}
-// }
 
 int main(int argc, char *argv[])
 {
@@ -113,46 +88,55 @@ int main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 
 	// applique logic :
-	// printf("--[%d]--\n", stack_a->items[0]);
-    // printf("}|%d|{---------->", stack_a->top);
-    // printf("}|%d|{\n", stack_a->items[stack_a->top]);
 	logic(stack_a, stack_b);
-
-	
-
-	// reverse_rotate(stack_a, 1, 'a');
-	// swaping(stack_b, 1, 'b');
-	// ss(stack_a, stack_b);
-	// pb(stack_a, stack_b);
-	// pa(stack_a, stack_b);
-	// push_to_stack(stack_b, stack_a, 'b');
-	// push_to_stack(stack_b, stack_a, 'b');
-	// push_to_stack(stack_a, stack_b, 'a');
-	// push_to_stack(stack_a, stack_b, 'a');
-	// rotate(stack_b, 1, 'b');
-	// ra(stack_a);
-	// rb(stack_b);
-	// rr(stack_a, stack_b); 
-	// reverse_rotate(stack_b, 1, 'b');
-	// reverse_rotate(stack_a, 1, 'a');
-	// rrr(stack_a, stack_b);
-	
-
 	
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("stack_A\n");
-	size = -1;
-	// stack_a->size
-	while(++size < stack_a->size)
-		printf("%d\n", stack_a->items[stack_a->top--]);
-	printf("stack_B\n");
-	size = -1;
-	while (++size < 2)
-	{
-		printf("%d\n", stack_b->items[stack_b->top--]);
-	}
+	// printf("stack_A\n");
+	// size = -1;
+	// // stack_a->size
+	// while(++size < stack_a->size)
+	// 	printf("%d\n", stack_a->items[stack_a->top--]);
+	// printf("stack_B\n");
+	// size = -1;
+	// while (++size < 2)
+	// {
+	// 	printf("%d\n", stack_b->items[stack_b->top--]);
+	// }
 	
 	
 	
     return(0);
 }
+
+
+
+
+
+
+// void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
+// {
+// 	char	**array;
+// 	int		size;
+
+// 	if (argc == 2)
+// 	{
+// 		array = ft_split(argv[argc - 1], ' ');
+// 		size = calculat_size(array);
+// 		stack_a = creat_stack(size);
+// 		stack_b = creat_stack(size);
+// 		if (ft_strnstr(argv[argc - 1], " ", size))
+// 		{
+// 			while(--size >= 0)
+// 				push(stack_a, ft_atoi(array[size]));
+// 			free_array(array);
+// 		}
+// 	}
+// 	else 
+// 	{
+// 		stack_a = creat_stack(argc - 1);
+// 		stack_b = creat_stack(argc - 1);
+// 		size = argc - 1;
+// 		while (--size >= 0)
+// 			push(stack_a, ft_atoi(argv[size + 1]));
+// 	}
+// }

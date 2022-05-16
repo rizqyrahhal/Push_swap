@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/09 16:48:08 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/16 17:56:44 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,15 @@ CC = CC
 
 SRCS = Mandatory/push_swap.c \
 		Mandatory/stack.c \
-		Mandatory/check_args.c \
-		Mandatory/ft_error.c \
-		Mandatory/is_Sorted.c \
-		Mandatory/is_duplicate.c \
-		Mandatory/action.c \
-		Mandatory/algo3_5.c \
-		
-		
-		
-		
-		
+		Mandatory/Function/check_args.c \
+		Mandatory/Function/ft_error.c \
+		Mandatory/Function/is_Sorted.c \
+		Mandatory/Function/is_duplicate.c \
+		Mandatory/Operation/action.c \
+		Mandatory/Operation/action2.c \
+		Mandatory/Algorithme/algorithme3_5.c \
+		Mandatory/Algorithme/sort_array.c \
+		Mandatory/Algorithme/find_median.c \
 
 LIBFT = libft/ft_atoi.c \
 		libft/ft_isdigit.c \
@@ -49,6 +47,9 @@ all: $(NAME)
 clean:
 	@rm -f Mandatory/*.o
 	@rm -f libft/*.o
+	@rm -f Mandatory/Algorithme/*.o
+	@rm -f Mandatory/Operation/*.o
+	@rm -f Mandatory/Function/*.o
 
 fclean: clean
 	@rm -f $(NAME)

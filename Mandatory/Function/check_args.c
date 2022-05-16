@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_duplicate.c                                     :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 14:50:38 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 14:58:37 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/04/23 15:56:00 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/05/16 17:30:51 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	check_is_Duplicate(t_stack *stack)
+int	check_args(int argc, char *argv[])
 {
 	int	i;
 	int	j;
 
-	i = -1;
-	while(++i < stack->size - 1)
+	i = 0;
+	while(++i < argc)
 	{
-		j = i;
-		while(++j < stack->size)
-			if (stack->items[i] == stack->items[j])
-				ft_error();
+		j = 0;
+		while(argv[i][j])
+		{
+			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
+				j++;
+			if (!ft_isdigit(argv[i][j]))
+				return (0);
+			j++;
+		}
 	}
+	return (1);
 }
