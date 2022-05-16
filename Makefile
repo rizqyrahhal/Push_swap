@@ -34,6 +34,7 @@ LIBFT = libft/ft_atoi.c \
 		libft/ft_strlcpy.c \
 		libft/ft_split.c \
 		libft/ft_strnstr.c \
+
 		
 		
 

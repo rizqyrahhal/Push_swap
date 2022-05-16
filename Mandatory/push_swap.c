@@ -83,7 +83,6 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 		exit (EXIT_FAILURE);
-	printf("TEST");
 	if (!check_args(argc, argv))
 		ft_error();
 	// amplement_stack(argc, argv, stack_a, stack_b);
@@ -114,6 +113,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_SUCCESS);
 
 	// applique logic :
+	// printf("--[%d]--\n", stack_a->items[0]);
+    // printf("}|%d|{---------->", stack_a->top);
+    // printf("}|%d|{\n", stack_a->items[stack_a->top]);
 	logic(stack_a, stack_b);
 
 	

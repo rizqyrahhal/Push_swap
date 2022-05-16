@@ -12,6 +12,15 @@
 
 #include "../includes/push_swap.h"
 
+void ft_copy(int *dest, int *src, int len)
+{
+    int i;
+
+    i = -1;
+    while (src[++i] && i < len)
+        dest[i] = src[i];
+}
+
 int *sort_array(int *array, int len)
 {
     int i;
@@ -39,7 +48,9 @@ int find_median(int *array, int len)
 {
     int median;
     int *sorted;
+    // int *copy;
 
+    // ft_copy(copy, array, len);
     sorted = sort_array(array, len);
     if (len == 4)
         median = sorted[0];
@@ -82,6 +93,8 @@ void    five_numbers(t_stack *stack_a, t_stack *stack_b)
     int median;
 
     median = find_median(stack_a->items, stack_a->size);
+    printf("%d---------->", stack_a->top);
+    printf("|%d|{\n", stack_a->items[stack_a->top]);
     i = -1;
     while (++i < stack_a->size)
     {
