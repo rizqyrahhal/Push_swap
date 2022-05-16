@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/16 17:52:41 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:38:48 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int     find_median(int *array, int len);
 t_stack *creat_stack(int capacity);
 void    push(t_stack *stack, int item);
 int     pop(t_stack *stack);
-int     is_Empty(t_stack *stack);
+int     is_empty(t_stack *stack);
 
 
 // action 

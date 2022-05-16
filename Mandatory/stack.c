@@ -6,13 +6,13 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:02:32 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/09 15:55:32 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:43:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack *creat_stack(int capacity)
+t_stack	*creat_stack(int capacity)
 {
 	t_stack	*stack;
 
@@ -20,12 +20,10 @@ t_stack *creat_stack(int capacity)
 	stack->size = capacity;
 	stack->top = -1;
 	stack->items = (int *)malloc(sizeof(int) * stack->size);
-
-	return(stack);
+	return (stack);
 }
 
-// isEmpty detai
-int	is_Empty(t_stack *stack)
+int	is_empty(t_stack *stack)
 {
 	if (stack->top == -1)
 		return (1);
@@ -46,12 +44,6 @@ int	pop(t_stack *stack)
 		exit(EXIT_FAILURE);
 	return (stack->items[stack->top--]);
 }
-
-
-
-
-
-
 
 //  Implementation comme amin
 // int	isFull(t_stack *stack)
@@ -76,6 +68,7 @@ int	pop(t_stack *stack)
 // 		return (stack->items[stack->top--]);
 // 	return (-1);
 // }
+
 
 
 
