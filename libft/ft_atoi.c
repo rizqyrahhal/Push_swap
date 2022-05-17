@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:51:13 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/04/25 01:09:41 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:09:30 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ int	ft_atoi(char *str)
 		str++;
 	}
 	if (res * sign > +2147483647 || res * sign < -2147483648)
-		ft_error();
+		ft_error("some arguments are bigger than an integer");
 	return (res * sign);
 }

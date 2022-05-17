@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/16 17:56:44 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/17 13:05:26 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,9 @@ SRCS = Mandatory/push_swap.c \
 		Mandatory/Algorithme/algorithme3_5.c \
 		Mandatory/Algorithme/sort_array.c \
 		Mandatory/Algorithme/find_median.c \
+		Mandatory/Algorithme/algorithme100.c \
+		Mandatory/Algorithme/algo_func.c \
+		Mandatory/Algorithme/get_element_index.c \
 
 LIBFT = libft/ft_atoi.c \
 		libft/ft_isdigit.c \
@@ -32,9 +35,6 @@ LIBFT = libft/ft_atoi.c \
 		libft/ft_strlcpy.c \
 		libft/ft_split.c \
 		libft/ft_strnstr.c \
-
-		
-		
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
