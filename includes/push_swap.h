@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/17 13:05:49 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/17 22:45:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ int     find_median(int *array, int len);
 void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step);
 void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end);
 int     get_element_index(t_stack *stack, int el);
+void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step);
+void    five_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step);
+
 
 
 

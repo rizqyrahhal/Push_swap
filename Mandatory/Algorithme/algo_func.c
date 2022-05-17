@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/17 13:15:03 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/17 22:06:00 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,30 @@ void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
         if (find)
             push_to_stack(stack_b, stack_a, 'b');
     }
+}
+
+void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
+{
+    int start;
+    int end;
+    int *sorted;
+    
+    start = 0;
+    end = step - 1;
+    sorted = sort_array(stack_a->items, stack_a->size);
+    while (start < max)
+    {
+        chunk(stack_a, stack_b, sorted[start], sorted[end]);
+        if (end + start - 1 > max)
+        {
+            start += step;
+            end = max - 1;
+        }
+        else
+        {
+            start += step;
+            end += step - 1;
+        }
+    }
+    free(sorted);
 }
