@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 21:04:20 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 23:04:01 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    choose_right_operation(t_stack *stack_a, int top_index, int battom_index
         while (++top_index <= stack_a->top)
             rotate(stack_a, 1, 'a');
     else
-        while (battom_index-- >= 0)
+        while (battom_index-- > 0)
             reverse_rotate(stack_a, 1, 'a');
 }
 
@@ -96,6 +96,7 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
         {
             start += step;
             end = start + step - 1;
+            // end += start + step - 1;
         }
     }
     free(sorted);

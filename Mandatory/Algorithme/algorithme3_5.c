@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:43:20 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/16 17:41:49 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 22:33:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,35 @@ void    three_numbers(t_stack *stack)
     else if (top < middle && middle > bottom)
         reverse_rotate(stack, 1, 'a');
 }
+
+// void	three_numbers(t_stack *a)
+// {
+// 	int	*sorted;
+// 	int	bigger;
+// 	int	smaller;
+
+// 	sorted = sort_array(a->items, a->top);
+// 	smaller = sorted[0];
+// 	bigger = sorted[2];
+// 	if (a->items[0] == bigger && a->items[1] == smaller)
+// 		swaping(a, 1, 'a');
+// 	else if (a->items[2] == bigger && a->items[1] == smaller)
+// 		rotate(a, 1, 'a');
+// 	else if (a->items[2] == bigger && a->items[0] == smaller)
+// 	{
+// 		swaping(a, 1, 'a');
+// 		reverse_rotate(a, 1, 'a');
+// 	}
+// 	else if (a->items[1] == bigger && a->items[2] == smaller)
+// 	{
+// 		swaping(a, 1, 'a');
+// 		rotate(a, 1, 'a');
+// 	}
+// 	else if (a->items[1] == bigger && a->items[0] == smaller)
+// 		reverse_rotate(a, 1, 'a');
+// 	free(sorted);
+// }
+
 
 void    five_numbers(t_stack *stack_a, t_stack *stack_b)
 {
