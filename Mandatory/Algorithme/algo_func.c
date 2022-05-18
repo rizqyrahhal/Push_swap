@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 13:50:00 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 21:04:20 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ int scan_stack_from_top(t_stack *stack_a, int start, int end)
     int top_index;
 
     top_index = stack_a->top;
-    while (top_index-- > -1){
+    while (top_index-- > -1)
         if (stack_a->items[top_index] >= start && stack_a->items[top_index] <= end)
             return (top_index);
-        // top_index--;
-    }
     return (-1);
 }
 
@@ -42,7 +40,7 @@ void    choose_right_operation(t_stack *stack_a, int top_index, int battom_index
         while (++top_index <= stack_a->top)
             rotate(stack_a, 1, 'a');
     else
-        while (battom_index-- > 0)
+        while (battom_index-- >= 0)
             reverse_rotate(stack_a, 1, 'a');
 }
 
@@ -52,26 +50,25 @@ void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
     int hold_battom_index;
     int find;
     
-    printf("start in chunk: |%d|\n", start);
-    printf("end in chunk: |%d|\n", end);
+    // printf("start in chunk: |%d|\n", start);
+    // printf("end in chunk: |%d|\n", end);
     find = 1;
     while (find)
     {
         find = 0;
         hold_top_index = scan_stack_from_top(stack_a, start, end);
-        printf("stack_a_>top: %d\n", stack_a->top);
-        printf("stack_a->items[top]: %d\n", stack_a->items[stack_a->top]);
-        printf("stack_a->items[hold_top_index]: %d\n", stack_a->items[hold_top_index]);
-        printf("hold_top_index: %d\n", hold_top_index);
         if (hold_top_index > -1)
             find = 1;
+        // printf("stack_a_>top: %d\n", stack_a->top);
+        // printf("stack_a->items[top]: %d\n", stack_a->items[stack_a->top]);
+        // printf("stack_a->items[hold_top_index]: %d\n", stack_a->items[hold_top_index]);
+        // printf("hold_top_index: %d\n", hold_top_index);
         hold_battom_index = scan_stack_from_battom(stack_a, start, end);
-        printf("stack_a->items[0]: %d\n", stack_a->items[0]);
-        printf("hold_battom_index: %d\n", hold_battom_index);
-        printf("stack_a->items[hold_battom_index]: %d\n", stack_a->items[hold_battom_index]);
-        // exit(0);
         if (hold_battom_index > -1)
             find = 1;
+        // printf("stack_a->items[0]: %d\n", stack_a->items[0]);
+        // printf("hold_battom_index: %d\n", hold_battom_index);
+        // printf("stack_a->items[hold_battom_index]: %d\n", stack_a->items[hold_battom_index]);
         choose_right_operation(stack_a, hold_top_index, hold_battom_index);
         if (find)
             push_to_stack(stack_b, stack_a, 'b');

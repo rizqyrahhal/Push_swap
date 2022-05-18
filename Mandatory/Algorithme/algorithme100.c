@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 14:00:13 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 21:45:46 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
     int *sorted;
 
     sorted = sort_array(stack_a->items, stack_a->top);
-	// printf("|***##%d##***|\n", sorted[10]);
-    // int i = -1;
-    // while (sorted[++i] != '\0')
-	//     printf("sorted[%d] == %d\n", i, (int)sorted[i]);
-	printf("|##%d##|\n", sorted[max - 1]);
-    printf("max: %d\n", max);
-    printf("step: %d\n", step);
     if (max < step)
         chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
     else

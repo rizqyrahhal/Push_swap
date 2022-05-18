@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:50:38 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/17 10:08:13 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 21:10:32 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	check_is_Duplicate(t_stack *stack)
 		j = i;
 		while(++j < stack->size)
 			if (stack->items[i] == stack->items[j])
-				ft_error("some arguments  duplicates");
+				ft_error("some arguments duplicates");
 	}
 }

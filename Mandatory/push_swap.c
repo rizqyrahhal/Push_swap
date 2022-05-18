@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 13:07:34 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 21:47:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,17 +93,17 @@ int main(int argc, char *argv[])
 	logic(stack_a, stack_b);
 	
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("stack_A\n");
-	size = -1;
-	// stack_a->size
-	while(++size < stack_a->size)
-		printf("%d\n", stack_a->items[stack_a->top--]);
-	printf("stack_B\n");
-	size = -1;
-	while (++size < 2)
-	{
-		printf("%d\n", stack_b->items[stack_b->top--]);
-	}
+	// printf("stack_A\n");
+	// size = -1;
+	// // stack_a->size
+	// while(++size < stack_a->size)
+	// 	printf("%d\n", stack_a->items[stack_a->top--]);
+	// printf("stack_B\n");
+	// size = -1;
+	// while (++size < 2)
+	// {
+	// 	printf("%d\n", stack_b->items[stack_b->top--]);
+	// }
 	
 	
 	

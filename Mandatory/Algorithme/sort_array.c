@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:39:29 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/16 17:40:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/18 20:57:48 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int *sort_array(int *array, int len)
     int *new_array;
 
     new_array = copy(array, len);
-    i = -1;
-    while (++i < len)
+    i = 0;
+    while (i <= len)
     {
-        j = i;
-        while (++j < len)
+        j = i + 1;
+        while (j <= len)
         {
             if (new_array[i] > new_array[j])
             {
@@ -44,7 +44,9 @@ int *sort_array(int *array, int len)
                 new_array[i] = new_array[j];
                 new_array[j] = tmp;
             }
+            j++;
         }
+        i++;
     }
     return (new_array);
 }
