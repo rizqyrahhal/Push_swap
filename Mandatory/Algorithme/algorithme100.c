@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 15:02:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 21:18:40 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int *sorted, int max, i
 {
     int start;
     int end;
-    
+
+    start = sorted[0];
+    end = sorted[step - 1];
+    printf("start = %d\nend = %d\n", start, end);
 }
 
 void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
@@ -33,7 +36,7 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
     if (max < step)
        chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
     else
-        split_chunks(stack_a, stack_b, max, step);
+        split_chunks(stack_a, stack_b, sorted, max, step);
 }
 
 /*
