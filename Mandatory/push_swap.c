@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 22:54:53 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 01:18:26 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	free_array(char **array)
 	free(array);
 }
 
-
+/*
 int main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 
 	// applique logic :
 	logic(stack_a, stack_b);
-	
+
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
 	// printf("stack_A\n");
 	// size = -1;
@@ -107,8 +107,8 @@ int main(int argc, char *argv[])
 	
 	
 	
-    return(0);
-}
+//     return (0);
+// }
 
 
 

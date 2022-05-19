@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/18 10:20:26 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/19 01:14:14 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ FLAGS = -Wall -Werror -Wextra
 CC = CC
 
 SRCS = Mandatory/push_swap.c \
+		Mandatory/checker.c \
 		Mandatory/stack.c \
 		Mandatory/Function/check_args.c \
 		Mandatory/Function/ft_error.c \
@@ -36,6 +37,7 @@ LIBFT = libft/ft_atoi.c \
 		libft/ft_strlcpy.c \
 		libft/ft_split.c \
 		libft/ft_strnstr.c \
+		libft/ft_strjoin.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_L = $(LIBFT:.c=.o)
