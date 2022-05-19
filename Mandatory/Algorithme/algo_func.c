@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 13:45:12 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 22:46:08 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int scan_stack_from_battom(t_stack *stack_a, int start, int end)
 
 void    choose_right_operation(t_stack *stack_a, int top_index, int battom_index)
 {
-    if ((stack_a->top - top_index) < battom_index)
+    if ((stack_a->top - top_index) <= battom_index)
         while (++top_index <= stack_a->top)
             rotate(stack_a, 1, 'a');
     else
-        while (battom_index-- > 0)
+        while (battom_index-- >= 0)
             reverse_rotate(stack_a, 1, 'a');
 }
 
@@ -87,7 +87,7 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
     while (start < max)
     {
         chunk(stack_a, stack_b, sorted[start], sorted[end]);
-        if (end + start - 1 > max)
+        if (end + step - 1 > max)
         {
             start += step;
             end = max - 1;

@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 14:52:09 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/20 00:12:12 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 		printf("%d\n", stack_a->items[stack_a->top--]);
 	printf("stack_B\n");
 	size = -1;
-	while (++size < 2)
+	while (++size < stack_b->size)
 	{
 		printf("%d\n", stack_b->items[stack_b->top--]);
 	}
