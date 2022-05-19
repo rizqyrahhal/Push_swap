@@ -6,18 +6,46 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 22:48:01 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:02:04 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
+void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
+{
+    printf("start: %d\nend: %d\n", start, end);
+}
+
+void    split_chunks(t_stack *stack_a, t_stack *stack_b, int *sorted, int max, int step)
+{
+    int start;
+    int end;
+    
+}
+
+void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
+{
+    int small_index;
+    int *sorted;
+
+    sorted = sort_array(stack_a->items, stack_a->size);
+    if (max < step)
+       chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
+    else
+        split_chunks(stack_a, stack_b, max, step);
+}
+
+/*
 void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
 {
     int bigger_index;
     int *sorted;
 
     sorted = sort_array(stack_a->items, stack_a->top);
+    // int i = -1;
+    // while (sorted[++i])
+        // printf("sorted[%d] = %d\n", i, sorted[i]);
     if (max < step)
         chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
     else
@@ -36,4 +64,4 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
         push_to_stack(stack_a, stack_b, 'a');
     }
     free(sorted);
-}
+}*/

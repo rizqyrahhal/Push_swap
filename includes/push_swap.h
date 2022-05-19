@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 01:13:10 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:00:30 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@ typedef struct s_stack
 // function
 void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b);
 int     check_args(int argc, char *argv[]);
-int     check_is_Sorted(t_stack *stack);
+int     check_is_Sorted(t_stack *stack_a);
 void	check_is_Duplicate(t_stack *stack);
 void	ft_error(char *str);
+void	free_array(char **array);
+int     calculat_size(char **str);
+
+
+
 
 // Algorithme function
 void	logic(t_stack *stack_a, t_stack *stack_b);
@@ -73,6 +78,8 @@ char	**ft_split(char *s, char c);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
+
 
 
 

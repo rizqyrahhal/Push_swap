@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:43:20 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 22:33:43 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:22:33 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,13 @@ void    five_numbers(t_stack *stack_a, t_stack *stack_b)
     int median;
 
     median = find_median(stack_a->items, stack_a->size);
+    // printf("median: %d\n", median);
     i = -1;
     while (++i < stack_a->size)
     {
-        if (stack_a->items[stack_a->top] <= median)
+        // printf("a->top: %d\n", stack_a->top);
+        // printf("a->items[a->top]: %d\n", stack_a->items[stack_a->top]);
+        if (stack_a->items[stack_a->top] < median)
             push_to_stack(stack_b, stack_a, 'b');
         reverse_rotate(stack_a, 1, 'a');
     }

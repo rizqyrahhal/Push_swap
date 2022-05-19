@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 01:12:27 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 10:33:19 by rarahhal         ###   ########.fr       */
+/*   Created: 2022/05/19 10:32:00 by rarahhal          #+#    #+#             */
+/*   Updated: 2022/05/19 10:33:23 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		lentgh;
-	char	*newstring;
+	int	i;
 
-	i = -1;
-	j = -1;
-	k = 0;
-	lentgh = ft_strlen(s1) + ft_strlen(s2);
-	newstring = (char *)malloc(sizeof(char) * (lentgh + 1));
-	if (!newstring)
-		return (NULL);
-	while (s1[++i])
+	i = 0;
+	while (n && s1[i] && s1[i] == s2[i])
 	{
-		newstring[k] = s1[i];
-		k++;
+		i++;
+		n--;
 	}
-	while (s2[++j])
-	{
-		newstring[k] = s2[j];
-		k++;
-	}	
-	newstring[k] = 0;
-	return (newstring);
+	if (n == 0)
+		return (0);
+	else
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
