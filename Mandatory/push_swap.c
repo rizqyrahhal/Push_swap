@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/22 05:14:11 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 00:37:59 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 			free_array(array);
 		}
 	}
-	else 
+	else
 	{
 		stack_a = creat_stack(argc - 1);
 		stack_b = creat_stack(argc - 1);

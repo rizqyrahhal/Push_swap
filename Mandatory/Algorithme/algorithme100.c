@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/22 05:18:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 00:43:10 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,25 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
 
     start = 0;
     end = step - 1;
-    sorted = sort_array(stack_a->items, stack_a->size);
+    sorted = sort_array(stack_a->items, stack_a->top);
     while (start < max)
     {
+    // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
+    
+    // int i = 1;
+    // printf("sorted[%d] = %d\n", 0, sorted[0]);
+    // printf("sorted[%d] = %d\n", 1, sorted[1]);
+    // while (sorted[++i])
+    //     printf("sorted[%d] = %d\n", i, sorted[i]);
+    // // while (sorted[++i])
+    // //     printf("sorted[%d] = %d\n", i, sorted[i]);
+
+    // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
         // printf("====in split_chunks in the lope====\n");
         // printf("start: %d\nend: %d\n", start, end);
         // printf("sorted[start] = %d\nsorted[end] = %d\n", sorted[start], sorted[end]);
-        // printf("==========================================================================================%d\n", sorted[9]);
-        chunk(stack_a, stack_b, sorted[start], sorted[end]);
+        // printf("====================================%d\n", sorted[24]);
+        chunk(stack_a, stack_b, &sorted[start], &sorted[end]);
     // printf("#####*******----stack_A----*******#####\n");
 	// int size = -1;
 	// int top_a = stack_a->top;
@@ -125,7 +136,9 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
     sorted = sort_array(stack_a->items, stack_a->top);
     // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
     
-    // int i = -1;
+    // int i = 1;
+    // printf("sorted[%d] = %d\n", 0, sorted[0]);
+    // printf("sorted[%d] = %d\n", 1, sorted[1]);
     // while (sorted[++i])
     //     printf("sorted[%d] = %d\n", i, sorted[i]);
     // while (sorted[++i])
@@ -153,6 +166,7 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
 	// 	printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
 	// 	top_b--;
 	// }
+    // exit(0);
     if (stack_a->items[stack_a->top] > stack_a->items[0])
         swaping(stack_a, 1, 'a');
     while (stack_b->top > -1)
