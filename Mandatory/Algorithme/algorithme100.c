@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/23 14:11:13 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:35:56 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,16 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
     int start;
     int end;
     int *sorted;
+    // int  *endd;
+    // int *startt;
 
     start = 0;
     end = step - 1;
     sorted = sort_array(stack_a->items, stack_a->top);
     while (start < max)
     {
+        // endd = (int)&sorted[end];
+        // startt = (int)&sorted[start];
     // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
     
     // int i = 1;
