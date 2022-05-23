@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:39:29 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/23 13:33:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 23:11:31 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,6 @@ int *copy(int *array, int len)
     // new_array[i] = '\0';
     return (new_array);
 }
-
-// int *copy(int *array, int len)
-// {
-//     int *new_array;
-//     int i;
-
-//     new_array = malloc(sizeof(int) * (len - 1));
-//     i = -1;
-//     while (++i < len)
-//         new_array[i] = array[i];
-//     // i = -1;
-//     // while(new_array[++i])
-//     //     printf("new_array[%d] = %d\n", i, new_array[i]);
-//     new_array[i] = '\0';
-//     return (new_array);
-// }
 
 int *sort_array(int *array, int len)
 {

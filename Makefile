@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/21 21:28:56 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/05/23 20:10:59 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = Mandatory/push_swap.c \
 		Mandatory/Algorithme/find_median.c \
 		Mandatory/Algorithme/algorithme100.c \
 		Mandatory/Algorithme/get_element_index.c \
-		# Mandatory/Algorithme/algo_func.c \
+		Mandatory/Algorithme/algo_func.c \
 		Mandatory/Algorithme/algorithme500.c \
 
 BONUS_SRCS = bonus/checker.c \

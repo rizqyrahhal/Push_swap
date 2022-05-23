@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:35:20 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 22:36:52 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 20:21:35 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void    five_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
 {
-    int start;
-    int end;
+    // int start;
+    // int end;
     int bigger_index;
     int *sorted;
 
-    sorted = sort_array(stack_a->items, max);
-    start = 0;
-    end = step - 1;
+    sorted = sort_array(stack_a->items, stack_a->top);
+    // start = 0;
+    // end = step - 1;
     split_chunks(stack_a, stack_b, max, step);
     sorted = sort_array(stack_b->items, stack_b->top);
     bigger_index = 0;
