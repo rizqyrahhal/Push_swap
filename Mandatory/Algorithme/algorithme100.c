@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/23 00:43:10 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:11:13 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,13 @@ void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
     int hold_first;
     int hold_second;
     int find;
+    // int startt;
+    // int endd;
 
     find = 1;
-    // printf("start = %d\nend = %d\n", start, end);
+    // startt = (int)&start;
+    // endd = (int)&end;
+    // printf("start = %d\nend = %d\n", &start, &end);
     while (find)
     {
         find = 0;
@@ -91,11 +95,12 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
     // //     printf("sorted[%d] = %d\n", i, sorted[i]);
 
     // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
-        // printf("====in split_chunks in the lope====\n");
-        // printf("start: %d\nend: %d\n", start, end);
-        // printf("sorted[start] = %d\nsorted[end] = %d\n", sorted[start], sorted[end]);
+    // exit(0);
+    //     printf("====in split_chunks in the lope====\n");
+    //     printf("start: %d\nend: %d\n", start, end);
+    //     printf("sorted[start] = %d\nsorted[end] = %d\n", sorted[start], sorted[end]);
         // printf("====================================%d\n", sorted[24]);
-        chunk(stack_a, stack_b, &sorted[start], &sorted[end]);
+        chunk(stack_a, stack_b, sorted[start], sorted[end]);
     // printf("#####*******----stack_A----*******#####\n");
 	// int size = -1;
 	// int top_a = stack_a->top;
@@ -122,10 +127,8 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
             start += step;
             end = start + step - 1;
         }
-        // break;
     }
     free(sorted);
-    // exit(0);
 }
 
 void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
@@ -141,17 +144,18 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
     // printf("sorted[%d] = %d\n", 1, sorted[1]);
     // while (sorted[++i])
     //     printf("sorted[%d] = %d\n", i, sorted[i]);
-    // while (sorted[++i])
-    //     printf("sorted[%d] = %d\n", i, sorted[i]);
+    // // while (sorted[++i])
+    // //     printf("sorted[%d] = %d\n", i, sorted[i]);
 
     // printf("====***************=========*************************==============********************************=======*/********************/=====\n");
-    // exit(0);
-    if (max < step)
+    if (max <= step)
         chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
     else
         split_chunks(stack_a, stack_b, max, step);
     sorted = sort_array(stack_b->items, stack_b->top);
     bigger_index = 0;
+    if (stack_a->items[stack_a->top] > stack_a->items[0])
+        swaping(stack_a, 1, 'a');
     // printf("#####*******----stack_A----*******#####\n");
 	// int size = -1;
 	// int top_a = stack_a->top;
@@ -165,10 +169,7 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
 	// while (++size <= stack_b->top){
 	// 	printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
 	// 	top_b--;
-	// }
-    // exit(0);
-    if (stack_a->items[stack_a->top] > stack_a->items[0])
-        swaping(stack_a, 1, 'a');
+	// };
     while (stack_b->top > -1)
     {
         bigger_index = get_element_index(stack_b, sorted[stack_b->top]);
@@ -187,7 +188,6 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
         //     while (bigger_index++ < stack_b->top)
         //             rotate(stack_b, 1, 'b');
         push_to_stack(stack_a, stack_b, 'a');
-        // break;
     }
     free(sorted);
 }
