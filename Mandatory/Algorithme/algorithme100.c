@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/24 20:34:37 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 00:55:11 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int ste
     sorted = sort_array(stack_a->items, stack_a->top);
     if (max <= step)
         chunk(stack_a, stack_b, sorted[0], sorted[max - 1]);
-    else{
+    else
         split_chunks(stack_a, stack_b, max, step);
-    }
     sorted = sort_array(stack_b->items, stack_b->top);
 
     bigger_index = 0;

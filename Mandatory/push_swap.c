@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/24 20:58:33 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 00:53:51 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int main(int argc, char *argv[])
 	check_is_Duplicate(stack_a);
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
-
 	// applique logic :
 	logic(stack_a, stack_b);
 
