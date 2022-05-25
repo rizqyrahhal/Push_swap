@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 00:55:39 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:53:22 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int scan_stack_from_battom(t_stack *stack_a, int start, int end)
     int battom_index;
 
     battom_index = -1;
-    printf("starttttttt = %d\nendddddd = %d\n", start, end);
+    // printf("starttttttt = %d\nendddddd = %d\n", start, end);
     while (++battom_index <= stack_a->top)
         if (stack_a->items[battom_index] >= start && stack_a->items[battom_index] <= end)
             return (battom_index);
@@ -59,8 +59,6 @@ void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
 	// }
     }
 }
-
-
 
 void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
 {

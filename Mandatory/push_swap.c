@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 00:53:51 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:54:08 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,24 +87,34 @@ int main(int argc, char *argv[])
 	check_is_Duplicate(stack_a);
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
+	int	*sorted;
+	sorted = sort_array(stack_a->items, stack_a->top);
+	// printf("=============sort_array==============\n");
+    // int i = 0;
+    // printf("sorted[%d] = %d\n", 0, sorted[0]);
+    // while (sorted[++i]){
+    //     printf("sorted[%d] = %d\n", i, sorted[i]);
+    // }
+    // printf("=============sort_array==============\n");
+	// exit(0);
 	// applique logic :
 	logic(stack_a, stack_b);
 
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("#####*******----stack_A----*******#####\n");
-	size = -1;
-	int top_a = stack_a->top;
-	while(++size <= stack_a->top){
-		printf("satck_a->items[%d] = %d\n", top_a, stack_a->items[top_a]);
-		top_a--;
-	}
-	printf("#####*******----stack_B----*******#####\n");
-	size = -1;
-	int top_b = stack_b->top;
-	while (++size <= stack_b->top){
-		printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
-		top_b--;
-	}
+	// printf("#####*******----stack_A----*******#####\n");
+	// size = -1;
+	// int top_a = stack_a->top;
+	// while(++size <= stack_a->top){
+	// 	printf("satck_a->items[%d] = %d\n", top_a, stack_a->items[top_a]);
+	// 	top_a--;
+	// }
+	// printf("#####*******----stack_B----*******#####\n");
+	// size = -1;
+	// int top_b = stack_b->top;
+	// while (++size <= stack_b->top){
+	// 	printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
+	// 	top_b--;
+	// }
 	
 	
     return (0);
