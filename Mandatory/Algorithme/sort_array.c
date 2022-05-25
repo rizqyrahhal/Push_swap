@@ -6,13 +6,13 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:39:29 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 15:53:05 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:09:12 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int *copy(int *array, int len)
+static int *copy(int *array, int len)
 {
     int *new_array;
     int i;

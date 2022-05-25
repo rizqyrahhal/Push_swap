@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:01:04 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 15:53:22 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:40:07 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ void    chunk(t_stack *stack_a, t_stack *stack_b, int start, int end)
     find = 1;
     while (find)
     {
-        // printf("stack_a->top = %d\n", stack_a->top);
-        // printf("start = %d\nend = %d\n", start, end);
+        printf("stack_a->top = %d\n", stack_a->top);
+        printf("start = %d\nend = %d\n", start, end);
         find = 0;
         hold_small = scan_stack_from_battom(stack_a, start, end);
         if (hold_small > -1)
             find = 1;
-        // printf("hold_small = %d\n", hold_small);
+        printf("hold_small = %d\n", hold_small);
         while (hold_small-- >= 0)
             reverse_rotate(stack_a, 1, 'a');
         if (find)
@@ -71,12 +71,14 @@ void    split_chunks(t_stack *stack_a, t_stack *stack_b, int max, int step)
     while (stack_a->top > -1)
     {
         sorted = sort_array(stack_a->items, stack_a->top);
-        // printf("====in split_chunks in the lope====\n");
-        // printf("start: %d\nend: %d\n", start, end);
-        // printf("sorted[start] = %d\nsorted[end] = %d\n", sorted[start], sorted[end]);
+        printf("====in split_chunks in the lope====\n");
+        printf("start: %d\nend: %d\n", start, end);
+        printf("sorted[start] = %d\nsorted[end] = %d\n", sorted[start], sorted[end]);
         chunk(stack_a, stack_b, sorted[start], sorted[end]);
         if (stack_a->top < step)
         {
+            // while(stack_a->top > - 1)
+            //     push_to_stack(stack_b, stack_a, 'b');
             start = 0;
             end = stack_a->top;
         }
