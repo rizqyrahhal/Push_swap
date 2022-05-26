@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 20:32:04 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:50:03 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,20 +92,20 @@ int main(int argc, char *argv[])
 	logic(stack_a, stack_b);
 
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("#####*******----stack_A----*******#####\n");
-	size = -1;
-	int top_a = stack_a->top;
-	while(++size <= stack_a->top){
-		printf("satck_a->items[%d] = %d\n", top_a, stack_a->items[top_a]);
-		top_a--;
-	}
-	printf("#####*******----stack_B----*******#####\n");
-	size = -1;
-	int top_b = stack_b->top;
-	while (++size <= stack_b->top){
-		printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
-		top_b--;
-	}
+	// printf("#####*******----stack_A----*******#####\n");
+	// size = -1;
+	// int top_a = stack_a->top;
+	// while(++size <= stack_a->top){
+	// 	printf("satck_a->items[%d] = %d\n", top_a, stack_a->items[top_a]);
+	// 	top_a--;
+	// }
+	// printf("#####*******----stack_B----*******#####\n");
+	// size = -1;
+	// int top_b = stack_b->top;
+	// while (++size <= stack_b->top){
+	// 	printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
+	// 	top_b--;
+	// }
 	
 	
     return (0);

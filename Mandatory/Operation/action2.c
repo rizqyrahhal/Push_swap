@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:51:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/21 22:44:17 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/26 19:09:30 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	rotate(t_stack *stack, int print, char type)
 	i = -1;
 	len = stack->top;
 	fop = pop(stack);
-	tmp = malloc(sizeof(int) * stack->top);
+	tmp = malloc(sizeof(int) * stack->top + 1);
 	while (!is_empty(stack))
 		tmp[++i] = pop(stack);
 	push(stack, fop);
@@ -60,7 +60,7 @@ int	reverse_rotate(t_stack *stack, int print, char type)
 	i = -1;
 	len = stack->top;
 	last = stack->items[0];
-	tmp = malloc(sizeof(int) * stack->top);
+	tmp = malloc(sizeof(int) * stack->top + 1);
 	while (!is_empty(stack))
 		tmp[++i] = pop(stack);
 	while (len-- > 0)

@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:39:29 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 20:09:12 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:47:53 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int *copy(int *array, int len)
     int *new_array;
     int i;
 
-    new_array = malloc(sizeof(int) * (len));
+    new_array = malloc(sizeof(int) * (len + 1));
     i = -1;
     while (++i <= len)
         new_array[i] = array[i];

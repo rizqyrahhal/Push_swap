@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 00:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/19 12:08:46 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/26 13:57:29 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,32 +74,67 @@ int	get_operation(char **operation)
 
 void    applicate_the_operation(char *operation, t_stack *a, t_stack *b)
 {
-    if (ft_strncmp(operation, "sa\n", 3)){
-		// printf("\nTEST\n");
+	// printf("%d\n")
+    if (ft_strncmp(operation, "sa\n", 3))
+	{
+		printf("Operation: %s\n", operation);
+		printf("\n====SA====\n");
         swaping(a, 0, 'a');
 	}
     else if (ft_strncmp(operation, "sb\n", 3))
+	{
+		printf("\n====Sb====\n");
         swaping(b, 0, 'b');
+	}
     else if (ft_strncmp(operation, "ss\n", 3))
+	{
+		printf("\n====SS====\n");
         ss(a, b);
+	}
     else if (ft_strncmp(operation, "pa\n", 3))
+	{
+		printf("\n====PA====\n");
         push_to_stack(a, b, 'a');
+	}
     else if (ft_strncmp(operation, "pb\n", 3))
+	{
+		printf("\n====PB====\n");
         push_to_stack(b, a, 'b');
+	}
     else if (ft_strncmp(operation, "ra\n", 3))
-        rotate(a, 0, 'a');
+	{
+		printf("\n====RA====\n");
+		rotate(a, 0, 'a');
+	}
     else if (ft_strncmp(operation, "rb\n", 3))
+	{
+		printf("\n====RB====\n");	
         rotate(b, 0, 'b');
+	}
     else if (ft_strncmp(operation, "rr\n", 3))
+	{
+		printf("\n====RR====\n");
         rr(a, b);
+	}
     else if (ft_strncmp(operation, "rra\n", 4))
+	{
+		printf("\n====RRA====\n");	
         reverse_rotate(a, 0, 'a');
+	}
     else if (ft_strncmp(operation, "rrb\n", 4))
+	{
+		printf("\n====RRB====\n");
         reverse_rotate(b, 0, 'b');
+	}
     else if (ft_strncmp(operation, "rrr\n", 4))
+	{
+		printf("\n====RRR====\n");
         rrr(a, b);
-	else
+	}
+	else {
+		printf("\n====ERROR====\n");
 		ft_error("This Instruction Does Not Exist\n");
+	}
 	free(operation);
 }
 
@@ -156,17 +191,17 @@ int	main(int argc, char **argv)
 	// print_stacks(stack_a, stack_b);
 
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
-	printf("stack_A\n");
-	size = -1;
-	// stack_a->size
-	while(++size < stack_a->size)
-		printf("%d\n", stack_a->items[stack_a->top--]);
-	printf("stack_B\n");
-	size = -1;
-	while (++size < 2)
-	{
-		printf("%d\n", stack_b->items[stack_b->top--]);
-	}
+	// printf("stack_A\n");
+	// size = -1;
+	// // stack_a->size
+	// while(++size < stack_a->size)
+	// 	printf("%d\n", stack_a->items[stack_a->top--]);
+	// printf("stack_B\n");
+	// size = -1;
+	// while (++size < 2)
+	// {
+	// 	printf("%d\n", stack_b->items[stack_b->top--]);
+	// }
 
 	check_stacks(stack_a, stack_b);
 	return (0);
