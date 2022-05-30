@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/26 20:50:03 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/28 23:41:48 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	calculat_size(char **str)
 	while (str[i])
 		i++;
 	return (i);
-		
 }
 
 void	free_array(char **array)
@@ -50,17 +49,45 @@ void	free_array(char **array)
 	free(array);
 }
 
-int main(int argc, char *argv[])
+// void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
+// {
+// 	char	**array;
+// 	int		size;
+	
+// 	if (argc == 2)
+// 	{
+// 		array = ft_split(argv[argc - 1], ' ');
+// 		size = calculat_size(array);
+// 		stack_a = creat_stack(size);
+// 		stack_b = creat_stack(size);
+// 		if (ft_strnstr(argv[argc - 1], " ", size))
+// 		{
+// 			while(--size >= 0)
+// 				push(stack_a, ft_atoi(array[size]));
+// 			free_array(array);
+// 		}
+// 	}
+// 	else
+// 	{
+// 		stack_a = creat_stack(argc - 1);
+// 		stack_b = creat_stack(argc - 1);
+// 		size = argc - 1;
+// 		while (--size >= 0)
+// 			push(stack_a, ft_atoi(argv[size + 1]));
+// 	}
+// }
+
+int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	**array;
-	int size;
+	int		size;
 
 	if (argc == 1)
 		exit (EXIT_FAILURE);
 	if (!check_args(argc, argv))
-		ft_error("some arguments aren’t integers");
+		ft_error("some arguments aren't integers");
 	// amplement_stack(argc, argv, stack_a, stack_b);
 	if (argc == 2)
 	{
@@ -70,7 +97,7 @@ int main(int argc, char *argv[])
 		stack_b = creat_stack(size);
 		if (ft_strnstr(argv[argc - 1], " ", size))
 		{
-			while(--size >= 0)
+			while (--size >= 0)
 				push(stack_a, ft_atoi(array[size]));
 			free_array(array);
 		}
@@ -83,14 +110,10 @@ int main(int argc, char *argv[])
 		while (--size >= 0)
 			push(stack_a, ft_atoi(argv[size + 1]));
 	}
-	
 	check_is_Duplicate(stack_a);
 	if (check_is_Sorted(stack_a))
 		exit(EXIT_SUCCESS);
-
-	// applique logic :
 	logic(stack_a, stack_b);
-
 	// print element of stack  /*le cas de "1 2 3" splete and assing*/
 	// printf("#####*******----stack_A----*******#####\n");
 	// size = -1;
@@ -106,40 +129,5 @@ int main(int argc, char *argv[])
 	// 	printf("stack_b->items[%d] = %d\n", top_b, stack_b->items[top_b]);
 	// 	top_b--;
 	// }
-	
-	
     return (0);
 }
-
-
-
-
-
-
-// void	amplement_stack(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
-// {
-// 	char	**array;
-// 	int		size;
-
-// 	if (argc == 2)
-// 	{
-// 		array = ft_split(argv[argc - 1], ' ');
-// 		size = calculat_size(array);
-// 		stack_a = creat_stack(size);
-// 		stack_b = creat_stack(size);
-// 		if (ft_strnstr(argv[argc - 1], " ", size))
-// 		{
-// 			while(--size >= 0)
-// 				push(stack_a, ft_atoi(array[size]));
-// 			free_array(array);
-// 		}
-// 	}
-// 	else 
-// 	{
-// 		stack_a = creat_stack(argc - 1);
-// 		stack_b = creat_stack(argc - 1);
-// 		size = argc - 1;
-// 		while (--size >= 0)
-// 			push(stack_a, ft_atoi(argv[size + 1]));
-// 	}
-// }

@@ -6,11 +6,21 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 00:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/26 13:57:29 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:42:28 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
+}
 
 int	calculat_size(char **str)
 {
@@ -69,64 +79,66 @@ int	get_operation(char **operation)
 		}
 	}
 	free(buffer);
+	// printf("operation: %s\n", operation);
 	return (ret);
 }
 
 void    applicate_the_operation(char *operation, t_stack *a, t_stack *b)
 {
-	// printf("%d\n")
-    if (ft_strncmp(operation, "sa\n", 3))
+	// printf("%d\n", ft_strncmp(operation, "ssss\n", 5));
+	// exit(0);
+    if (ft_strcmp(operation, "sa\n"))
 	{
 		printf("Operation: %s\n", operation);
 		printf("\n====SA====\n");
         swaping(a, 0, 'a');
 	}
-    else if (ft_strncmp(operation, "sb\n", 3))
+    else if (ft_strcmp(operation, "sb\n"))
 	{
 		printf("\n====Sb====\n");
         swaping(b, 0, 'b');
 	}
-    else if (ft_strncmp(operation, "ss\n", 3))
+    else if (ft_strcmp(operation, "ss\n"))
 	{
 		printf("\n====SS====\n");
         ss(a, b);
 	}
-    else if (ft_strncmp(operation, "pa\n", 3))
+    else if (ft_strcmp(operation, "pa\n"))
 	{
 		printf("\n====PA====\n");
         push_to_stack(a, b, 'a');
 	}
-    else if (ft_strncmp(operation, "pb\n", 3))
+    else if (ft_strcmp(operation, "pb\n"))
 	{
 		printf("\n====PB====\n");
         push_to_stack(b, a, 'b');
 	}
-    else if (ft_strncmp(operation, "ra\n", 3))
+    else if (ft_strcmp(operation, "ra\n"))
 	{
 		printf("\n====RA====\n");
 		rotate(a, 0, 'a');
 	}
-    else if (ft_strncmp(operation, "rb\n", 3))
+    else if (ft_strcmp(operation, "rb\n"))
 	{
 		printf("\n====RB====\n");	
         rotate(b, 0, 'b');
 	}
-    else if (ft_strncmp(operation, "rr\n", 3))
+    else if (ft_strcmp(operation, "rr\n"))
 	{
 		printf("\n====RR====\n");
         rr(a, b);
 	}
-    else if (ft_strncmp(operation, "rra\n", 4))
+    else if (ft_strcmp(operation, "rra\n"))
 	{
 		printf("\n====RRA====\n");	
         reverse_rotate(a, 0, 'a');
 	}
-    else if (ft_strncmp(operation, "rrb\n", 4))
+    else if (ft_strcmp(operation, "rrb\n"))
 	{
 		printf("\n====RRB====\n");
         reverse_rotate(b, 0, 'b');
 	}
-    else if (ft_strncmp(operation, "rrr\n", 4))
+    else if (ft_strcmp(operation, "rrr\n"))
 	{
 		printf("\n====RRR====\n");
         rrr(a, b);

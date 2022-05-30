@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:33:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/25 18:00:48 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:58:05 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int     ft_atoi(char *str);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dist, const char *src, size_t dstsize);
 char	**ft_split(char *s, char c);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);

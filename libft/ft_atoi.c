@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 17:51:13 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/17 10:09:30 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/28 22:34:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_atoi(char *str)
 {
 	long	res;
 	long	sign;
-	
+
 	res = 0;
 	sign = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))

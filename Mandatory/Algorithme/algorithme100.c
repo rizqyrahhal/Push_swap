@@ -6,13 +6,14 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:13:30 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/26 19:37:22 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:43:39 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void    one_hundred_numbers(t_stack *stack_a, t_stack *stack_b, int max, int step)
+void	one_hundred_numbers(t_stack *stack_a, t_stack *stack_b,
+							 int max, int step)
 {
     int bigger_index;
     int *sorted;
