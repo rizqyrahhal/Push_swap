@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:02:32 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/26 16:23:10 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:56:23 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,39 +44,3 @@ int	pop(t_stack *stack)
 		exit(EXIT_FAILURE);
 	return (stack->items[stack->top--]);
 }
-
-//  Implementation comme amin
-// int	isFull(t_stack *stack)
-// {
-// 	return (stack->top == stack->size - 1);
-// }
-
-// int	is_Empty(t_stack *stack)
-// {
-// 	return (stack->top == stack->size);
-// }
-
-// void	push(t_stack *stack, int item)
-// {
-// 	if (!isFull(stack))
-// 		stack->items[++stack->top] = item;
-// }
-
-// int	pop(t_stack *stack)
-// {
-// 	if (!is_empty(stack))
-// 		return (stack->items[stack->top--]);
-// 	return (-1);
-// }
-
-
-
-
-// isFull detai
-// int	isFull(t_stack *stack)
-// {
-// 	if (stack->top == stack->size - 1)
-// 		return (1);
-// 	else
-// 		return (0);
-// }

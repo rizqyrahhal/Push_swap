@@ -6,22 +6,22 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:50:38 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/18 21:10:32 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:39:43 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	check_is_Duplicate(t_stack *stack)
+void	check_is_duplicate(t_stack *stack)
 {
 	int	i;
 	int	j;
 
 	i = -1;
-	while(++i < stack->size - 1)
+	while (++i < stack->size - 1)
 	{
 		j = i;
-		while(++j < stack->size)
+		while (++j < stack->size)
 			if (stack->items[i] == stack->items[j])
 				ft_error("some arguments duplicates");
 	}

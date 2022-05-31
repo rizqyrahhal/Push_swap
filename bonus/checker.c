@@ -6,12 +6,12 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 00:33:01 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/27 23:42:28 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 21:00:10 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
+// https://signin.intra.42.fr/legal/terms/5      Terms and Conditions 42
 int	ft_strcmp(char *s1, char *s2)
 {
 	int i;

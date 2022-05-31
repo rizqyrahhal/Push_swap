@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 17:51:08 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/26 19:09:30 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:34:54 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	rotate(t_stack *stack, int print, char type)
 		if (type == 'b')
 			printing("rb\n");
 	}
-	// free(tmp);
+	free(tmp);
 	return (1);
 }
 
@@ -73,7 +73,7 @@ int	reverse_rotate(t_stack *stack, int print, char type)
 		if (type == 'b')
 			printing("rrb\n");
 	}
-	// free(tmp);
+	free(tmp);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 15:56:00 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/16 17:30:51 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:38:42 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	check_args(int argc, char *argv[])
 	int	j;
 
 	i = 0;
-	while(++i < argc)
+	while (++i < argc)
 	{
 		j = 0;
-		while(argv[i][j])
+		while (argv[i][j])
 		{
+			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
+				j++;
 			if (argv[i][j] == '+' || argv[i][j] == '-' || argv[i][j] == ' ')
 				j++;
 			if (!ft_isdigit(argv[i][j]))

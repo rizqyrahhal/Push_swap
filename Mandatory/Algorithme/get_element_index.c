@@ -6,19 +6,19 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:04:15 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/21 23:40:17 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:33:33 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int get_element_index(t_stack *stack, int el)
+int	get_element_index(t_stack *stack, int el)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (++i < stack->size)
-        if (stack->items[i] == el)
-            return (i);
-    return (0);
+	i = -1;
+	while (++i < stack->size)
+		if (stack->items[i] == el)
+			return (i);
+	return (0);
 }
