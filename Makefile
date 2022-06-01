@@ -6,7 +6,7 @@
 #    By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 17:42:08 by rarahhal          #+#    #+#              #
-#    Updated: 2022/05/31 20:43:08 by rarahhal         ###   ########.fr        #
+#    Updated: 2022/06/01 12:34:00 by rarahhal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ LIBFT = libft/ft_atoi.c \
 		libft/ft_strlen.c \
 		libft/ft_strlcpy.c \
 		libft/ft_split.c \
-		libft/ft_strnstr.c \
 
 
 OBJS = $(SRCS:.c=.o)

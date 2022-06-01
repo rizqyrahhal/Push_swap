@@ -6,7 +6,7 @@
 /*   By: rarahhal <rarahhal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 12:47:48 by rarahhal          #+#    #+#             */
-/*   Updated: 2022/05/31 13:37:53 by rarahhal         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:33:44 by rarahhal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,9 @@ void	amplement_stack(int argc, char *argv[],
 		size = calculat_size(array);
 		*stack_a = creat_stack(size);
 		*stack_b = creat_stack(size);
-		if (ft_strnstr(argv[argc - 1], " ", size))
-		{
-			while (--size >= 0)
-				push(*stack_a, ft_atoi(array[size]));
-			free_array(array);
-		}
+		while (--size >= 0)
+			push(*stack_a, ft_atoi(array[size]));
+		free_array(array);
 	}
 	else
 	{
